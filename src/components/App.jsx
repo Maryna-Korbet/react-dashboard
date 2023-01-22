@@ -1,3 +1,7 @@
+import {Toaster} from 'react-hot-toast';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout';
+
 export const App = () => {
   return (
     <div
@@ -10,7 +14,11 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <Routes>
+        <Route path="/" element={<div>{<Layout />}</div>}/>
+      </Routes>
+      <Toaster position='top-right' reverseOrder={false} />
     </div>
+    
   );
 };
