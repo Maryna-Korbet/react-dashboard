@@ -24,7 +24,7 @@ export const Customers = () => {
   
   return (
     <main>
-    <SearchBox onChange={changeFilter} />
+    <SearchBox value={filterParam} onChange={changeFilter} />
       {visibleCustomers.length > 0 && (
         <ul>
           {visibleCustomers.map(customer => (
