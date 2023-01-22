@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 export const Customers = () => {
   const [customers, setCustomers] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const filter = searchParams.get('filter') ?? "";
+  const filterParam = searchParams.get('filter') ?? "";
 
   useEffect(() => {
     getCustomers().then(setCustomers);
@@ -19,8 +19,8 @@ export const Customers = () => {
   };
 
   const visibleCustomers = useMemo(() => {
-    return customers.filter(customer => customer.name.toLowerCase().includes(filter.toLowerCase()));
-  }, [customers, filter]);
+    return customers.filter(customer => customer.name.toLowerCase().includes(filterParam.toLowerCase()));
+  }, [customers, filterParam]);
   
   return (
     <main>
