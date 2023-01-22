@@ -2,6 +2,7 @@ import {Toaster} from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { GlobalStyle } from './GlobalStyle';
+import {Sales} from '../pages/Sales';
 
 export const App = () => {
   return (
@@ -9,7 +10,7 @@ export const App = () => {
       <Routes>
         <Route path="*" element={<div>{<Layout />}</div>}>
           <Route path="dashboard" element={<div>Dashboard</div>} />
-          <Route path="sales" element={<div>Sales</div>} />
+          <Route path="sales" element={<div>{<Sales />}</div>} />
           <Route path="reports" element={<div>Reports</div>} />
           <Route path="feedback" element={<div>Feedback</div>} />
           <Route path="customers" element={<div>Customers</div>} />
