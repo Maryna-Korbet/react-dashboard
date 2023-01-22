@@ -20,8 +20,9 @@ export const AppBar = () => {
   return (
     <Box as="header" p={4} height="100vh" borderRight="1px solid black">
       <Box as="nav" display="flex" flexDirection="column">
-        {navItems.map(({ href, text, icon}) => (
+        {navItems.map(({ href, text, icon: Icon}) => (
           <Link to={href} key={href}>
+          <Icon size="16" />
             {text}
           </Link>
         ))}
