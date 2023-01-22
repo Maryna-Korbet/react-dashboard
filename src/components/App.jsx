@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { GlobalStyle } from './GlobalStyle';
 import {Sales} from '../pages/Sales';
+import { Invoices } from './Invoices';
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
           <Route path="dashboard" element={<div>Dashboard</div>} />
           <Route path="sales" element={<div>{<Sales />}</div>}>
             <Route path="analytics" element={<div>Analytics</div>} />
-            <Route path="invoices" element={<div>Invoices</div>} />
+            <Route path="invoices" element={<div><Invoices /></div>} />
             <Route path="deposits" element={<div>Deposits</div>} />
           </Route>
           <Route path="reports" element={<div>Reports</div>} />
