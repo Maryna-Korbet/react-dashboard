@@ -6,6 +6,7 @@ import {Sales} from '../pages/Sales';
 import { Invoices } from './Invoices';
 import {InvoiceDetails} from './InvoiceDetails';
 import {Customers} from '../pages/Customers';
+import { CustomerDetails } from 'pages/CustomerDetails';
 
 export const App = () => {
   return (
@@ -26,7 +27,7 @@ export const App = () => {
           <Route path="reports" element={<div>Reports</div>} />
           <Route path="feedback" element={<div>Feedback</div>} />
           <Route path="customers" element={<div><Customers /></div>} />
-          <Route path="customers/:customerId" element={<div>Customer details</div>} />
+          <Route path="customers/:customerId" element={<div><CustomerDetails /></div>} />
         </Route>
       </Routes>
       <GlobalStyle />
