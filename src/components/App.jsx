@@ -5,6 +5,7 @@ import { GlobalStyle } from './GlobalStyle';
 import {Sales} from '../pages/Sales';
 import { Invoices } from './Invoices';
 import {InvoiceDetails} from './InvoiceDetails';
+import {Customers} from '../pages/Customers';
 
 export const App = () => {
   return (
@@ -24,7 +25,7 @@ export const App = () => {
           </Route>
           <Route path="reports" element={<div>Reports</div>} />
           <Route path="feedback" element={<div>Feedback</div>} />
-          <Route path="customers" element={<div>Customers</div>} />
+          <Route path="customers" element={<div><Customers /></div>} />
         </Route>
       </Routes>
       <GlobalStyle />
