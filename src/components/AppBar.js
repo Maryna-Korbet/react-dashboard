@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   BsStack,
   BsWalletFill,
@@ -5,7 +6,7 @@ import {
   BsChatLeftTextFill,
   BsPersonLinesFill,
 } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Box } from './Box';
 
 const navItems = [
@@ -16,15 +17,33 @@ const navItems = [
   { href: 'customers', text: 'Customers', icon: BsPersonLinesFill },
 ];
 
+const NavItem = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  gap: ${p => p.theme.space[3]}px;
+  padding: ${p => p.theme.space[3]}px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: ${p => p.theme.colors.text};
+  &.active {
+    background-color: ${p => p.theme.colors.primary};
+    color: ${p => p.theme.colors.white};
+  }
+  :hover:not(.active),
+  :focus-visible:not(.active) {
+    color: ${p => p.theme.colors.primary};
+  }
+`;
+
 export const AppBar = () => {
   return (
     <Box as="header" p={4} height="100vh" borderRight="1px solid black">
       <Box as="nav" display="flex" flexDirection="column">
         {navItems.map(({ href, text, icon: Icon}) => (
-          <Link to={href} key={href}>
+          <NavItem to={href} key={href}>
           <Icon size="16" />
             {text}
-          </Link>
+          </NavItem>
         ))}
       </Box>
     </Box>
