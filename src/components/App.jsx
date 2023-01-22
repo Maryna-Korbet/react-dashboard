@@ -15,7 +15,7 @@ export const App = () => {
       }}
     >
       <Routes>
-        <Route path="/" element={<div>{<Layout />}</div>}/>
+        <Route path="*" element={<div>{<Layout />}</div>}/>
       </Routes>
       <Toaster position='top-right' reverseOrder={false} />
     </div>
