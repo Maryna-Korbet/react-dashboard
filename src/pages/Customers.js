@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { SearchBox } from 'components/SearchBox';
 import { useSearchParams } from 'react-router-dom';
+import { useMemo } from 'react';
 
 export const Customers = () => {
   const [customers, setCustomers] = useState([]);
@@ -17,8 +18,10 @@ export const Customers = () => {
     setSearchParams(value !=="" ? {filter: value} : {});
   };
 
-  const visibleCustomers = customers.filter(customer => customer.name.toLowerCase().includes(filter.toLowerCase()));
-
+  const visibleCustomers = useMemo(() => {
+    return customers.filter(customer => customer.name.toLowerCase().includes(filter.toLowerCase()));
+  }, [customers, filter]);
+  
   return (
     <main>
     <SearchBox onChange={changeFilter} />
