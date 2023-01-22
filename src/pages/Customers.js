@@ -2,7 +2,7 @@ import { getCustomers } from '../fakeAPI';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { SearchBox } from 'components/SearchBox';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { useMemo } from 'react';
 
 export const Customers = () => {
@@ -29,7 +29,7 @@ export const Customers = () => {
         <ul>
           {visibleCustomers.map(customer => (
             <li key={customer.id}>
-              {customer.name}
+              <Link to={`${customer.id}`}>{customer.name}</Link>
             </li>
           ))}
         </ul>

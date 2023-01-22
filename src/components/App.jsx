@@ -26,6 +26,7 @@ export const App = () => {
           <Route path="reports" element={<div>Reports</div>} />
           <Route path="feedback" element={<div>Feedback</div>} />
           <Route path="customers" element={<div><Customers /></div>} />
+          <Route path="customers/:customerId" element={<div>Customer details</div>} />
         </Route>
       </Routes>
       <GlobalStyle />
